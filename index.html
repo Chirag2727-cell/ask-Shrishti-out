@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ask Her Out</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
+        .button {
+            padding: 10px 20px;
+            margin: 20px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Will you go out with me?</h1>
+    <button id="yesButton" class="button">Yes</button>
+    <button id="noButton" class="button">No</button>
+
+    <script>
+        // Function to make the "No" button move to a random position
+        const noButton = document.getElementById('noButton');
+        noButton.addEventListener('mouseover', () => {
+            const x = Math.random() * (window.innerWidth - noButton.offsetWidth);
+            const y = Math.random() * (window.innerHeight - noButton.offsetHeight);
+            noButton.style.position = 'absolute';
+            noButton.style.left = `${x}px`;
+            noButton.style.top = `${y}px`;
+        });
+
+        // Redirect to confirmation page when "Yes" button is clicked
+        document.getElementById('yesButton').addEventListener('click', () => {
+            window.location.href = 'confirmation.html'; // Redirects to the confirmation page
+        });
+    </script>
+
+</body>
+</html>
